@@ -24,18 +24,21 @@ sudo chmod a+rw /dev/ttyACM0
 
 ## Ultrasonic Sensor
 
-![](../images/Ultrasonic-Mega2560.png)
+![](./imgs/Ultrasonic-Mega2560.png)
 
 * [Ultrasonic Sensor HC-SR04 and Arduino Tutorial](https://howtomechatronics.com/tutorials/arduino/ultrasonic-sensor-hc-sr04/)  
+
 * [HOW TO CONTROL A SIMPLE PROCESSING GAME WITH ARDUINO](http://www.instructables.com/id/How-to-control-a-simple-Processing-game-with-Ardui/)
 
 ### ROS程序读取HC-SR04数据
 
 1.按上图接线
+
 2.烧录 **ultrasonic_ros.ino** 程序到 Arduino
+
 3.分别启动如下脚本
 
-```bash
+```sh
 roscore
 rosrun rosserial_python serial_node.py /dev/ttyACM0
 rostopic echo /range_ultrasonic
