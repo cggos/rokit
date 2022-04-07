@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<include file="$(find xsens_driver)/launch/xsens_driver.launch" />
+	<node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+	<node pkg="sensors_test" type="teleop_imu" name="teleop_imu" />
+</launch>

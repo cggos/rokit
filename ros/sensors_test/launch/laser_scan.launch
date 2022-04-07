@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node"/>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find sensors_test)/rviz/laser.rviz"/>
+  <node pkg="sensors_test" type="laser_scan" name="laser_scan" />
+</launch>

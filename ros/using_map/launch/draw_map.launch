@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="using_map" type="draw_map" name="draw_map"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find using_map)/rviz/draw_map.rviz" />
+</launch>
