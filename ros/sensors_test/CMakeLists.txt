@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.3)
 project(sensors_test)
 
 find_package(catkin REQUIRED COMPONENTS
-  dynamixel_msgs
+  # dynamixel_msgs
   geometry_msgs
   joy
   nav_msgs
