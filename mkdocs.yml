@@ -92,7 +92,7 @@ nav:
   - Home: 'index.md'
 
   - Embedded:
-    - Overview: embedded/Arduino.md
+    - Arduino: embedded/Arduino.md
 
   - Control System:
     - Overview: control_system/README.md
