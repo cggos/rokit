@@ -73,7 +73,7 @@ rospack plugins --attrib=plugin costmap_2d
 * [Bloom](http://wiki.ros.org/bloom) is a **release automation tool**, designed to make generating platform specific release artifacts from source projects easier. Bloom is designed to work best with catkin projects, but can also accommodate other types of projects.
 
 
-## ROS IDE
+### ROS IDE
 
 * CLion
     - [ROS Setup Tutorial](https://www.jetbrains.com/help/clion/ros-setup-tutorial.html)

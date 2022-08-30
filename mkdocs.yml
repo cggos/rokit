@@ -100,5 +100,8 @@ nav:
   - ROS:
     - Overview: ros/README.md
   
-  - Gazebo:
+  - Simulation:
     - Overview: gazebo/README.md
+
+  - DIY:
+    - Overview: diy/README.md
