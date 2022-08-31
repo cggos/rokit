@@ -1,7 +1,5 @@
 # Robot Kit
 
-* Source Code: https://github.com/cggos/rokit
-
 ---
 
 <p align="center">

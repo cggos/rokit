@@ -97,11 +97,18 @@ nav:
   - Control System:
     - Overview: control_system/README.md
 
+  - Path Planning:
+    - Overview: path_planning/README.md
+
   - ROS:
     - Overview: ros/README.md
   
   - Simulation:
-    - Overview: gazebo/README.md
+    - Overview: sim/README.md
+    - Gazebo: sim/gazebo.md
 
   - DIY:
     - Overview: diy/README.md
+  
+  - Autonomous Driving:
+    - Overview: autonomous_driving/README.md
