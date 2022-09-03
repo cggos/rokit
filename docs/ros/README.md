@@ -47,6 +47,19 @@
 rospack plugins --attrib=plugin costmap_2d
 ```
 
+## Debug
+
+<p align="center">
+  <iframe src="https://www.youtube.com/embed/k-uDpjrLJKs?rel=0&showinfo=0"
+    width="780" height="480" frameborder="no" scrolling="no" allowfullscreen="true">
+  </iframe>
+</p>
+
+* [How to Roslaunch Nodes in Valgrind or GDB](http://wiki.ros.org/roslaunch/Tutorials/Roslaunch%20Nodes%20in%20Valgrind%20or%20GDB)
+* [A Dummy’s Guide to Debugging ROS Systems](https://bluesat.com.au/a-dummys-guide-to-debugging-ros-systems/)
+* [Debugging with GDB](https://ctu-mrs.github.io/docs/software/gdb.html)
+
+
 ## Build Tools
 
 * [Catkin](http://docs.ros.org/api/catkin/html/) is a collection of CMake macros and associated code used to build packages used in **ROS**
