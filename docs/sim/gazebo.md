@@ -25,8 +25,7 @@ Gazebo是一款优秀的开源物理仿真环境，它具备如下特点：
 
 ## Config
 
-```yaml
-# ~/.ignition/fuel/config.yaml
+```yaml title="~/.ignition/fuel/config.yaml"
 servers:
   -
     name: osrf
@@ -35,9 +34,19 @@ servers:
 
 ## Files
 
-<p align="center">
-  <img src="../img/gazebo_model.png" style="width:50%"/>
-</p>
+```mermaid
+graph LR;
+    A(RViz)   --> C(.launch);
+    B(Gazebo) --> C;
+    C --> D(Model);
+    C --> E(.world);
+    D --> F(.urdf);
+    D --> K(.sdf);
+    D --> G(.xacro);
+    F --> H(Mesh);
+    G --> I(.gazebo);
+    H --> J(.dae);
+```
 
 * mesh files: .obj, .stl, .dae
 * urdf files: .sdf, .urdf, .xacro
@@ -58,8 +67,6 @@ URDF vs SDF vs XACRO
 
 ### URDF
 
-#### Tools
-
 ```sh
 sudo apt install liburdfdom-tools
 ```
@@ -68,6 +75,42 @@ sudo apt install liburdfdom-tools
 check_urdf xxx.urdf
 
 urdf_to_graphiz xxx.urdf
+```
+
+### load model
+
+```sh
+export GAZEBO_MODEL_PATH=/home/pan/.gazebo/models
+
+rosrun gazebo_ros spawn_model -sdf -model model.sdf
+
+rosrun gazebo_ros spawn_model \
+  -file `echo $GAZEBO_MODEL_PATH`/xxx/model.sdf -sdf -model modelname
+
+# online model
+rosrun gazebo_ros spawn_model \
+  -database coke_can -sdf -model coke_can1 -y 2.2 -x -0.3
+```
+
+### model state
+
+```sh
+rostopic pub -r 20 /gazebo/set_model_state gazebo_msgs/ModelState \
+  '{model_name: coke_can1, \
+  pose: { position: { x: 1, y: 0, z: 2 }, \
+  orientation: {x: 0, y: 0.491983115673, z: 0, w: 0.870604813099 } }, 
+  twist: { linear: { x: 0, y: 0, z: 0 }, \
+  angular: { x: 0, y: 0, z: 0}  }, \
+  reference_frame: world }'
+
+rostopic echo -n 1 /gazebo/model_states
+rostopic echo -n 1 /gazebo/link_states
+```
+
+### delete model
+
+```sh
+rosservice call gazebo/delete_model '{model_name: xxx}'
 ```
 
 
