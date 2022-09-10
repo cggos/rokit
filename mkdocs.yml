@@ -102,6 +102,7 @@ nav:
 
   - ROS:
     - Overview: ros/README.md
+    - ROS Matlab: ros/ros_matlab.md
   
   - Simulation:
     - Overview: sim/README.md
