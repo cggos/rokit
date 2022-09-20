@@ -119,3 +119,6 @@ nav:
   
   - Autonomous Driving:
     - Overview: autonomous_driving/README.md
+  
+  - Robot + XR:
+    - Overview: robot_xr/README.md
