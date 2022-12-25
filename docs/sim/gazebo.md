@@ -65,53 +65,61 @@ URDF vs SDF vs XACRO
 - xacro文件是urdf文件的改进版，urdf文件只能在rviz等中显示，不能在仿真器中显示出来。
 - xacro文件可以在gazebo仿真器中显示出来，相对urdf文件，xacro文件增加了更多的属性设置标签。
 
-### URDF
 
-```sh
-sudo apt install liburdfdom-tools
-```
+### Worlds
 
-```sh
-check_urdf xxx.urdf
+* open world file
+  ```sh
+  gazebo <world-file>
+  ```
 
-urdf_to_graphiz xxx.urdf
-```
+### Models
 
-### load model
+* database
+  - [osrf/gazebo_models](https://github.com/osrf/gazebo_models)
 
-```sh
-export GAZEBO_MODEL_PATH=/home/pan/.gazebo/models
+* URDF
+  ```sh
+  # install
+  sudo apt install liburdfdom-tools
 
-rosrun gazebo_ros spawn_model -sdf -model model.sdf
+  # use
+  check_urdf xxx.urdf
+  urdf_to_graphiz xxx.urdf
+  ```
 
-rosrun gazebo_ros spawn_model \
-  -file `echo $GAZEBO_MODEL_PATH`/xxx/model.sdf -sdf -model modelname
+* load model
+  ```sh
+  export GAZEBO_MODEL_PATH=/home/pan/.gazebo/models
+  
+  rosrun gazebo_ros spawn_model -sdf -model model.sdf
+  
+  rosrun gazebo_ros spawn_model \
+    -file `echo $GAZEBO_MODEL_PATH`/xxx/model.sdf -sdf -model modelname
+  
+  # online model
+  rosrun gazebo_ros spawn_model \
+    -database coke_can -sdf -model coke_can1 -y 2.2 -x -0.3
+  ```
 
-# online model
-rosrun gazebo_ros spawn_model \
-  -database coke_can -sdf -model coke_can1 -y 2.2 -x -0.3
-```
+* model state
+  ```sh
+  rostopic pub -r 20 /gazebo/set_model_state gazebo_msgs/ModelState \
+    '{model_name: coke_can1, \
+    pose: { position: { x: 1, y: 0, z: 2 }, \
+    orientation: {x: 0, y: 0.491983115673, z: 0, w: 0.870604813099 } }, 
+    twist: { linear: { x: 0, y: 0, z: 0 }, \
+    angular: { x: 0, y: 0, z: 0}  }, \
+    reference_frame: world }'
 
-### model state
+  rostopic echo -n 1 /gazebo/model_states
+  rostopic echo -n 1 /gazebo/link_states
+  ```
 
-```sh
-rostopic pub -r 20 /gazebo/set_model_state gazebo_msgs/ModelState \
-  '{model_name: coke_can1, \
-  pose: { position: { x: 1, y: 0, z: 2 }, \
-  orientation: {x: 0, y: 0.491983115673, z: 0, w: 0.870604813099 } }, 
-  twist: { linear: { x: 0, y: 0, z: 0 }, \
-  angular: { x: 0, y: 0, z: 0}  }, \
-  reference_frame: world }'
-
-rostopic echo -n 1 /gazebo/model_states
-rostopic echo -n 1 /gazebo/link_states
-```
-
-### delete model
-
-```sh
-rosservice call gazebo/delete_model '{model_name: xxx}'
-```
+* delete model
+  ```sh
+  rosservice call gazebo/delete_model '{model_name: xxx}'
+  ```
 
 
 ## Gazebo with ROS
