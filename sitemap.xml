@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://robot.cgabc.xyz/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/autonomous_driving/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/control_system/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/diy/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/embedded/Arduino/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/path_planning/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/robot_xr/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/ros/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/ros/ros_matlab/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/sim/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://robot.cgabc.xyz/sim/gazebo/</loc>
-         <lastmod>2022-09-20</lastmod>
+         <lastmod>2022-12-25</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

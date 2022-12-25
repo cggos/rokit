@@ -681,29 +681,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#URDF" class="md-nav__link">
-    URDF
+  <a href="#Worlds" class="md-nav__link">
+    Worlds
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#load_model" class="md-nav__link">
-    load model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model_state" class="md-nav__link">
-    model state
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_model" class="md-nav__link">
-    delete model
+  <a href="#Models" class="md-nav__link">
+    Models
   </a>
   
 </li>
@@ -936,29 +922,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#URDF" class="md-nav__link">
-    URDF
+  <a href="#Worlds" class="md-nav__link">
+    Worlds
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#load_model" class="md-nav__link">
-    load model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#model_state" class="md-nav__link">
-    model state
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delete_model" class="md-nav__link">
-    delete model
+  <a href="#Models" class="md-nav__link">
+    Models
   </a>
   
 </li>
@@ -1088,15 +1060,31 @@
 </li>
 <li>xacro文件可以在gazebo仿真器中显示出来，相对urdf文件，xacro文件增加了更多的属性设置标签。</li>
 </ul>
-<h3 id="URDF">URDF<a class="headerlink" href="#URDF" title="Permanent link">&para;</a></h3>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apt install liburdfdom-tools
-</code></pre></div>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>check_urdf xxx.urdf
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>urdf_to_graphiz xxx.urdf
-</code></pre></div>
-<h3 id="load_model">load model<a class="headerlink" href="#load_model" title="Permanent link">&para;</a></h3>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span> <span class="nv">GAZEBO_MODEL_PATH</span><span class="o">=</span>/home/pan/.gazebo/models
+<h3 id="Worlds">Worlds<a class="headerlink" href="#Worlds" title="Permanent link">&para;</a></h3>
+<ul>
+<li>open world file
+  <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gazebo &lt;world-file&gt;
+</code></pre></div></li>
+</ul>
+<h3 id="Models">Models<a class="headerlink" href="#Models" title="Permanent link">&para;</a></h3>
+<ul>
+<li>database</li>
+<li>
+<p><a href="https://github.com/osrf/gazebo_models">osrf/gazebo_models</a></p>
+</li>
+<li>
+<p>URDF
+  <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># install</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo apt install liburdfdom-tools
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># use</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>check_urdf xxx.urdf
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>urdf_to_graphiz xxx.urdf
+</code></pre></div></p>
+</li>
+<li>
+<p>load model
+  <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span> <span class="nv">GAZEBO_MODEL_PATH</span><span class="o">=</span>/home/pan/.gazebo/models
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>rosrun gazebo_ros spawn_model -sdf -model model.sdf
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -1106,9 +1094,11 @@
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># online model</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>rosrun gazebo_ros spawn_model <span class="se">\</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  -database coke_can -sdf -model coke_can1 -y <span class="m">2</span>.2 -x -0.3
-</code></pre></div>
-<h3 id="model_state">model state<a class="headerlink" href="#model_state" title="Permanent link">&para;</a></h3>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rostopic pub -r <span class="m">20</span> /gazebo/set_model_state gazebo_msgs/ModelState <span class="se">\</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>model state
+  <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>rostopic pub -r <span class="m">20</span> /gazebo/set_model_state gazebo_msgs/ModelState <span class="se">\</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>  <span class="s1">&#39;{model_name: coke_can1, \</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="s1">  pose: { position: { x: 1, y: 0, z: 2 }, \</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="s1">  orientation: {x: 0, y: 0.491983115673, z: 0, w: 0.870604813099 } }, </span>
@@ -1118,10 +1108,14 @@
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>rostopic <span class="nb">echo</span> -n <span class="m">1</span> /gazebo/model_states
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>rostopic <span class="nb">echo</span> -n <span class="m">1</span> /gazebo/link_states
-</code></pre></div>
-<h3 id="delete_model">delete model<a class="headerlink" href="#delete_model" title="Permanent link">&para;</a></h3>
-<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rosservice call gazebo/delete_model <span class="s1">&#39;{model_name: xxx}&#39;</span>
-</code></pre></div>
+</code></pre></div></p>
+</li>
+<li>
+<p>delete model
+  <div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>rosservice call gazebo/delete_model <span class="s1">&#39;{model_name: xxx}&#39;</span>
+</code></pre></div></p>
+</li>
+</ul>
 <h2 id="Gazebo_with_ROS">Gazebo with ROS<a class="headerlink" href="#Gazebo_with_ROS" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/129660662">【ROS-Gazebo】SDF的建模与使用</a></li>
