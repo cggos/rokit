@@ -6,13 +6,16 @@ import numpy as np
 import cv2
 
 
+idx_start = 0
 num_need = 1000
 
 if __name__ == '__main__':
     bag_dir = sys.argv[1]
     bag_name = sys.argv[2]
     imagetopic = '/camera/fisheye1/image_raw'
-    out_dir = 'out'
+    out_dir = 'bow_imgs'
+    out_root = bag_dir
+    # out_root = '/home/cg/projects/dataset/rs_cam/t265/nj_lawn/'
     img_dir = os.path.join(bag_dir, out_dir)
     if not os.path.exists(img_dir):
         os.makedirs(img_dir)
@@ -27,7 +30,7 @@ if __name__ == '__main__':
     num_max = len(index)
     num_dur = num_max / num_need
     idx = 0
-    idx_out = 0
+    idx_out = idx_start
     imgname = os.path.join(img_dir, '{:0>5d}.png')
     for topic, msg, t in bag.read_messages(topics=imagetopic):
         if idx % num_dur == 0:
