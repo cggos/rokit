@@ -2,7 +2,7 @@
 <launch>
 	<node pkg="turtlesim" type="turtlesim_node" name="sim"/>
 
-	<node pkg="sensors_test" type="teleop_joy" name="teleop_joy" />
+	<node pkg="sensors_test" type="teleop_joy" name="teleop_joy" output="screen"/>
 	<param name="axis_linear"  value="1" type="int" />
 	<param name="axis_angular" value="0" type="int" />
 
