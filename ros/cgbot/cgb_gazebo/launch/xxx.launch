@@ -1,40 +1,49 @@
 <?xml version="1.0"?>
 
 <launch>
+  <arg name="gui" default="true" />
+  <arg name="paused" default="true" />
+  <arg name="use_sim_time" default="true" />
+  <arg name="headless" default="false" />
+
+  <!-- Robot pose -->
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="0" />
+  <arg name="roll" default="0" />
+  <arg name="pitch" default="0" />
+  <arg name="yaw" default="0" />
+
+  <arg name="Pose"
+    default="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
+
   <!-- house: https://github.com/traviezo/turtlebot_lawn_mower -->
   <!-- terrain_1: https://github.com/SyllogismRXS/gazebo_terrain_tutorial -->
   <arg name="world_name" default="house_grass" /> <!-- house, terrain_1 -->
-  <arg name="gui" default="true"/>
-  <arg name="paused" default="true"/>
-  <arg name="use_sim_time" default="false"/>
-  <arg name="headless" default="false"/>
 
-  <!-- Robot pose -->
-  <arg name="x" default="0"/>
-  <arg name="y" default="0"/>
-  <arg name="z" default="0"/>
-  <arg name="roll" default="0"/>
-  <arg name="pitch" default="0"/>
-  <arg name="yaw" default="0"/>
-
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find cgb_gazebo)/worlds/$(arg world_name).world"/>
-    <arg name="gui" value="$(arg gui)"/>
-    <arg name="paused" value="$(arg paused)"/>
-    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
-    <arg name="headless" value="$(arg headless)"/>
-  </include>
-
-  <arg name="Pose" default="-x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
   <!-- Spawn the robot from the URDF that was loaded into the robot_description parameter -->
   <!-- Convert an xacro to URDF and put on parameter server -->
-  <arg name="model0" default="$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro"/>
-  <arg name="model1" default="$(find cgb_description)/urdf/robot1_base_04.xacro"/>
-  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model1)"/>
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model cgbot $(arg Pose) -param robot_description"/>
+  <arg name="model0" default="$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro" />
+  <arg name="model1" default="$(find cgb_description)/urdf/robot1_base_04.xacro" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find cgb_gazebo)/worlds/$(arg world_name).world" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="use_sim_time" value="$(arg use_sim_time)" />
+    <arg name="headless" value="$(arg headless)" />
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro -i $(arg model1)" />
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model cgbot $(arg Pose) -param robot_description" />
+
   <!-- Spawn a robot into Gazebo -->
-  <arg name="urdf_file" default="$(find cgb_description)/urdf/robot1.urdf"/>
-  <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model cgbot $(arg Pose) -file $(arg urdf_file)"/> -->
+  <!-- 
+  <arg name="urdf_file" default="$(find cgb_description)/urdf/robot1.urdf" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+  args="-urdf -model cgbot $(arg Pose) -file $(arg urdf_file)"/> 
+  -->
 
 </launch>
-

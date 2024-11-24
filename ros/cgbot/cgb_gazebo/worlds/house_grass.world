@@ -75,7 +75,7 @@
       <pose>0.497681 0 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>11656 440000000</sim_time>
+      <sim_time>0</sim_time>
       <real_time>4120 459429344</real_time>
       <wall_time>1494122049 474864522</wall_time>
       <model name='Dumpster'>

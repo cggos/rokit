@@ -3,7 +3,7 @@
 	<arg name="model" default="$(find robot1_description)/urdf/robot1.urdf"/>
 	<arg name="gui" default="False" />
 
-	<param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+	<param name="robot_description" command="$(find xacro)/xacro -i $(arg model)" />
 	<param name="use_gui" value="$(arg gui)"/>
 
 	<node name="state_publisher_tutorials" pkg="robot1_description" type="state_publisher_tutorials" />

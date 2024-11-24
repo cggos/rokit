@@ -8,7 +8,11 @@
 cd rokit
 mkdir build
 cd build
+
 rosdep install --from-paths ../ros/ --ignore-src --rosdistro $ROS_DISTRO -y
+
+sudo apt install ros-noetic-xacro ros-noetic-robot-state-publisher
+
 catkin_make --source ../ros/
 ```
 
@@ -17,8 +21,6 @@ catkin_make --source ../ros/
 ### robot1_description
 
 ```sh
-roslaunch robot1_description state_xacro.launch model:="`rospack find robot1_description`/urdf/robot1.xacro"
-
 # 模型并没有任何纹理渲染
 roslaunch robot1_description gazebo.launch model:="`rospack find robot1_description`/urdf/robot1_base_01.xacro"
 

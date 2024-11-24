@@ -46,6 +46,10 @@ if __name__ == '__main__':
             if img_channel == 3:
                 img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
             cv2.imwrite(imgname.format(idx_out), img)
-            print('{:0>5d} {:0>5d} {} {} {}'.format(idx_out, idx, header_seq, stamp_sec, stamp_nsec))
+            print(
+                '{:0>5d} {:0>5d} {} {} {}'.format(
+                    idx_out, idx, header_seq, stamp_sec, stamp_nsec
+                )
+            )
             idx_out += 1
         idx += 1

@@ -3,7 +3,7 @@
 	<arg name="gui" default="False" />
 
 	<!-- <param name="robot_description" textfile="$(find robot1_description)/urdf/robot1.urdf" /> -->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find robot1_description)/urdf/robot1.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro -i '$(find robot1_description)/urdf/robot1.xacro'" />
 
 	<param name="use_gui" value="$(arg gui)"/>
 
