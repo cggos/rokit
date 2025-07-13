@@ -3,3 +3,4 @@ build/
 site/
 ros/CMakeLists.txt
 .idea/
+OBJ/

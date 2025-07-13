@@ -1,0 +1,15 @@
+<launch>
+    <arg name="robot_simulation" default="turtlesim" doc="robot_simulation type [turtlesim, turtlebot]"/>
+    <node name="joy_node" pkg="joy" type="joy_node" output="screen" respawn="false"/>
+    <group if="$(eval robot_simulation == 'turtlesim')">
+        <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen" respawn="false"/>
+        <param name="robot" value="turtlesim" type="str"/>
+    </group>
+    <group if="$(eval robot_simulation == 'turtlebot')">
+        <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch"/>
+        <param name="robot" value="turtlebot" type="str"/>
+    </group>
+    <node name="turtle" pkg="joy_ctrl" type="turtle" output="screen">
+    </node>
+</launch>
+

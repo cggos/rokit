@@ -1,0 +1,9 @@
+<launch>
+    <param name="use_sim_time" value="false"/>
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_house.launch"/>
+    <node name="joy_node" pkg="joy" type="joy_node" output="screen" respawn="false"/>
+    <node name="joy_turtlebot" pkg="joy_ctrl" type="joy_turtlebot.py" output="screen">
+        <param name="linear_speed_limit" type="double" value="0.22"/>
+        <param name="angular_speed_limit" type="double" value="2.0"/>
+    </node>
+</launch>

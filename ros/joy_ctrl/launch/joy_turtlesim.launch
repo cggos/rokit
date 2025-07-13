@@ -1,0 +1,9 @@
+<launch>
+    <param name="use_sim_time" value="false"/>
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen" respawn="false"/>
+    <node name="joy_node" pkg="joy" type="joy_node" output="screen" respawn="false"/>
+    <node name="joy_turtlesim" pkg="joy_ctrl" type="joy_turtlesim.py" output="screen">
+        <param name="linear_speed_limit" type="double" value="1.0"/>
+        <param name="angular_speed_limit" type="double" value="2.0"/>
+    </node>
+</launch>
